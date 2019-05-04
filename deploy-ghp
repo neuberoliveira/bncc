@@ -4,9 +4,9 @@ id=`cat .next/BUILD_ID`
 outdir="public"
 jekyll=".nojekyll"
 
-touch "$public/$jekyll" 
-touch "$public/_next/static/$id/pages/$jekyll"
-git add "$public/_next/static/" "$public/public/$jekyll"
+touch "$outdir/$jekyll" 
+touch "$outdir/_next/static/$id/pages/$jekyll"
+git add "$outdir/_next/static/" "$outdir/$jekyll"
 git commit -am 'deploy'
 git push origin master
-git subtree push --prefix $public origin gh-pages
+git subtree push --prefix $outdir origin gh-pages
