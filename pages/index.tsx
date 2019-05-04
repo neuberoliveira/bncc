@@ -45,15 +45,20 @@ function App() {
 	// const [searching, setSearching] = useState(false);
 	
 	const doSearch = (term?:string) => {
-		const regex:RegExp = new RegExp(term+"", 'i')
-		setResults(codesFlat.filter((item:ItemFlat)=>regex.test(item.code)))
+		if(term){
+			const regex:RegExp = new RegExp(term.replace(/\*/g, '.*'), 'i')
+			setResults(codesFlat.filter((item:ItemFlat)=>regex.test(item.code)))
+		}else{
+			setResults(defaultResult)
+			
+		}
 	}
 	
 	return (
 		<div className="container">
 			<div className="row">
 				<div className="col-sm-12">
-					<input type="text" className="form-control" placeholder="Ex: EI01EO01" onKeyUp={(evt)=>doSearch(evt.target.value)} />
+					<input type="text" className="form-control" placeholder="Ex: EI01EO01" autoFocus={true} onKeyUp={(evt)=>doSearch(evt.target.value)} />
 				</div>
 			</div>
 			<br />

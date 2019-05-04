@@ -6,6 +6,6 @@ console.log(process.env.NODE_ENV)
 module.exports = withTypescript(
 	withSass({
 		pageExtensions: ['jsx', 'js'],
-		assetPrefix: !debug ? '/bncc' : '/Users/neuber/htdocs/bncc/',
+		assetPrefix: !debug ? '/bncc' : '',
 	})
 )
