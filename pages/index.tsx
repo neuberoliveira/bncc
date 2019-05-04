@@ -39,7 +39,7 @@ codes.map((grp:Group, i:number)=>{
 	})
 })
 
-function Example() {
+function App() {
 	const defaultResult:SearchResult = codesFlat // []
 	const [results, setResults] = useState(defaultResult);
 	// const [searching, setSearching] = useState(false);
@@ -66,7 +66,6 @@ function Example() {
 								<h6 className="card-subtitle mb-2 text-muted">{codes[item.groupIndex].title}</h6>
 								<p className="font-italic border-bottom pb-3" style={{fontSize:'13px'}}>{item.range}</p>
 								<p className="card-text">{item.description}</p>
-								
 							</div>
 						</div>
 					</div>
@@ -76,4 +75,4 @@ function Example() {
 	);
 }
   
-export default Example
+export default App

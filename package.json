@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "main": "pages/index.tsx",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "NODE_ENV=local next",
+    "build": "NODE_ENV=local next build",
+    "start": "NODE_ENV=local next start",
+    "export": "NODE_ENV=production next build && next export -o public"
   },
   "dependencies": {
     "@types/react": "^16.8.15",
