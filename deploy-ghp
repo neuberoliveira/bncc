@@ -1,5 +1,7 @@
 #!/bin/sh
-git add public/_next/
+
+touch public/.nojekyll
+git add public/_next/ public/.nojekyll
 git commit -am 'deploy'
 git push origin master
 git subtree push --prefix public origin gh-pages
