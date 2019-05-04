@@ -1,7 +1,12 @@
 #!/bin/sh
 
-touch public/.nojekyll
-git add public/_next/ public/.nojekyll
+id=`cat .next/BUILD_ID`
+outdir="public"
+jekyll=".nojekyll"
+
+touch "$public/$jekyll" 
+touch "$public/_next/static/$id/pages/$jekyll"
+git add "$public/_next/static/" "$public/public/$jekyll"
 git commit -am 'deploy'
 git push origin master
-git subtree push --prefix public origin gh-pages
+git subtree push --prefix $public origin gh-pages
