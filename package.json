@@ -6,7 +6,7 @@
     "dev": "NODE_ENV=local next",
     "build": "NODE_ENV=local next build",
     "start": "NODE_ENV=local next start",
-    "export": "NODE_ENV=production rm -rf node_modules/.cache/babel-loader && next build && next export -o public"
+    "export": "./export"
   },
   "dependencies": {
     "@types/react": "^16.8.15",
